@@ -14,9 +14,9 @@ const Cart = (props: Props) => {
   });
 
   return (
-    <CartContainer ref={wrapperRef} onClick={() => setShow(true)}>
-      <CartImage />
-      <Notification>3</Notification>
+    <CartContainer ref={wrapperRef}>
+      <CartImage onClick={() => setShow(!show)} />
+      <Notification onClick={() => setShow(!show)}>3</Notification>
       {show && <Popup />}
     </CartContainer>
   );

@@ -26,6 +26,7 @@ export const Notification = styled.div`
   font-weight: 700;
   font-size: 10px;
   line-height: 12px;
+  cursor: pointer;
 
   color: #ffffff;
 
