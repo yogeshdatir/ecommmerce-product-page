@@ -56,6 +56,7 @@ export const CheckoutButton = styled.button`
   padding: 1rem 0;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 
   font-weight: 700;
   font-size: 16px;
@@ -63,4 +64,9 @@ export const CheckoutButton = styled.button`
   /* identical to box height */
 
   color: #ffffff;
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    background: #ffab6a;
+  }
 `;

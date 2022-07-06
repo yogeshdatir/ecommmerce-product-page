@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Header from "./components/Header";
-import Product from "./pages/Product";
+import ProductPage from "./pages/ProductPage";
 
 const Container = styled.div`
   max-width: 1110px;
@@ -11,7 +11,7 @@ function App() {
   return (
     <Container>
       <Header />
-      <Product />
+      <ProductPage />
     </Container>
   );
 }
