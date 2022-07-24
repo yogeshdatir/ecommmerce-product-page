@@ -70,13 +70,14 @@ export const ActionContainer = styled.div`
 
 export const Counter = styled.div`
   background: #f6f8fd;
+  width: 10rem;
   border-radius: 10px;
   margin-right: 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   span {
-    padding: 0 2rem;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;

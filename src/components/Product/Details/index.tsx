@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEvent, useState } from "react";
 import {
   ProductBrandName,
   ProductName,
@@ -18,6 +18,7 @@ import { ReactComponent as AddIcon } from "../../../assets/images/icon-plus.svg"
 type Props = {};
 
 const Details = (props: Props) => {
+  const [itemCount, setItemCount] = useState<number>(0);
   return (
     <ProductDetailsContainer>
       <ProductBrandName>Sneaker Company</ProductBrandName>
@@ -34,11 +35,20 @@ const Details = (props: Props) => {
       <ProductMRP>$250.00</ProductMRP>
       <ActionContainer>
         <Counter>
-          <CounterButton>
+          <CounterButton
+            onClick={(event: MouseEvent) => {
+              itemCount > 0 &&
+                setItemCount((prevItemCount: number) => prevItemCount - 1);
+            }}
+          >
             <MinusIcon />
           </CounterButton>
-          <span>0</span>
-          <CounterButton>
+          <span>{itemCount}</span>
+          <CounterButton
+            onClick={(event: MouseEvent) => {
+              setItemCount((prevItemCount: number) => prevItemCount + 1);
+            }}
+          >
             <AddIcon />
           </CounterButton>
         </Counter>
