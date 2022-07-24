@@ -30,7 +30,7 @@ export const PreviewThumbnail = styled.img<IPreviewThumbnail>`
   cursor: pointer;
   opacity: ${({ active }: IPreviewThumbnail) => (active ? 0.5 : 1)};
   border: ${({ active }: IPreviewThumbnail) =>
-    active ? "2px solid #FF7E1B" : "none"};
+    active ? "2px solid #FF7E1B" : "2px solid #fff"};
 
   :hover {
     opacity: ${({ active }: IPreviewThumbnail) => (active ? 0.5 : 0.7)};
