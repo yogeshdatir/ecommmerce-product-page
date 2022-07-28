@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import Header from "./components/Header";
+import CartContextProvider from "./contexts/cartContext";
+import ProductListContextProvider from "./contexts/productListContext";
 import ProductPage from "./pages/ProductPage";
 
 const Container = styled.div`
@@ -9,10 +11,14 @@ const Container = styled.div`
 
 function App() {
   return (
-    <Container>
-      <Header />
-      <ProductPage />
-    </Container>
+    <ProductListContextProvider>
+      <CartContextProvider>
+        <Container>
+          <Header />
+          <ProductPage />
+        </Container>
+      </CartContextProvider>
+    </ProductListContextProvider>
   );
 }
 

@@ -14,11 +14,43 @@ import {
 import { ReactComponent as CartIcon } from "../../../assets/images/icon-cart.svg";
 import { ReactComponent as MinusIcon } from "../../../assets/images/icon-minus.svg";
 import { ReactComponent as AddIcon } from "../../../assets/images/icon-plus.svg";
+import { IProductInCart, useCart } from "../../../contexts/cartContext";
 
 type Props = {};
 
 const Details = (props: Props) => {
-  const [itemCount, setItemCount] = useState<number>(0);
+  const [itemCount, setItemCount] = useState<number>(1);
+  const { productsInCart, setProductsInCart } = useCart();
+
+  const handleAddToCart = () => {
+    const existingProductInCart: IProductInCart | undefined =
+      productsInCart.filter(
+        (productInCart: IProductInCart) => productInCart.id === 1
+      )[0];
+
+    if (itemCount < 1) return;
+
+    if (existingProductInCart) {
+      const productToAddInCart: IProductInCart = {
+        id: 1,
+        count: existingProductInCart.count + itemCount,
+      };
+      setProductsInCart([
+        ...productsInCart.filter(
+          (productInCart: IProductInCart) => productInCart.id !== 1
+        ),
+        productToAddInCart,
+      ]);
+      return;
+    }
+
+    const productToAddInCart: IProductInCart = {
+      id: 1,
+      count: itemCount,
+    };
+    setProductsInCart([...productsInCart, productToAddInCart]);
+  };
+
   return (
     <ProductDetailsContainer>
       <ProductBrandName>Sneaker Company</ProductBrandName>
@@ -36,8 +68,8 @@ const Details = (props: Props) => {
       <ActionContainer>
         <Counter>
           <CounterButton
-            onClick={(event: MouseEvent) => {
-              itemCount > 0 &&
+            onClick={() => {
+              itemCount > 1 &&
                 setItemCount((prevItemCount: number) => prevItemCount - 1);
             }}
           >
@@ -52,7 +84,7 @@ const Details = (props: Props) => {
             <AddIcon />
           </CounterButton>
         </Counter>
-        <AddToCartButton>
+        <AddToCartButton onClick={handleAddToCart}>
           <CartIcon />
           Add to cart
         </AddToCartButton>

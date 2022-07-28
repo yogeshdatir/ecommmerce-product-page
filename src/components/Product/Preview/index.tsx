@@ -3,7 +3,8 @@ import {
   PreviewContainer,
   PreviewImage,
   PreviewThumbnail,
-  PreviewThumbnailContainer,
+  PreviewThumbnailsContainer,
+  PreviewThumbnailWrapper,
 } from "./index.styled";
 import Product1Preview from "../../../assets/images/image-product-1.jpg";
 import Product1Thumbnail from "../../../assets/images/image-product-1-thumbnail.jpg";
@@ -13,10 +14,11 @@ import Product3Preview from "../../../assets/images/image-product-3.jpg";
 import Product3Thumbnail from "../../../assets/images/image-product-3-thumbnail.jpg";
 import Product4Preview from "../../../assets/images/image-product-4.jpg";
 import Product4Thumbnail from "../../../assets/images/image-product-4-thumbnail.jpg";
+import PreviewModal from "../PreviewModal";
 
 type Props = {};
 
-const previewSwitcher = (index: number) => {
+export const previewSwitcher = (index: number) => {
   switch (index) {
     case 1:
       return Product1Preview;
@@ -34,34 +36,52 @@ const previewSwitcher = (index: number) => {
 
 const Preview = (props: Props) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(1);
+  const [showPreviewModal, setShowPreviewModal] = useState<boolean>(false);
+
   return (
     <PreviewContainer>
       <PreviewImage
         src={previewSwitcher(selectedImageIndex)}
         alt="Product1 Preview"
+        style={{ cursor: "pointer" }}
+        onClick={(event: MouseEvent) => {
+          setShowPreviewModal(true);
+        }}
       />
-      <PreviewThumbnailContainer>
-        <PreviewThumbnail
-          src={Product1Thumbnail}
-          active={selectedImageIndex === 1}
-          onClick={(event: MouseEvent) => setSelectedImageIndex(1)}
+      <PreviewThumbnailsContainer>
+        <PreviewThumbnailWrapper>
+          <PreviewThumbnail
+            src={Product1Thumbnail}
+            active={selectedImageIndex === 1}
+            onClick={(event: MouseEvent) => setSelectedImageIndex(1)}
+          />
+        </PreviewThumbnailWrapper>
+        <PreviewThumbnailWrapper>
+          <PreviewThumbnail
+            src={Product2Thumbnail}
+            active={selectedImageIndex === 2}
+            onClick={(event: MouseEvent) => setSelectedImageIndex(2)}
+          />
+        </PreviewThumbnailWrapper>
+        <PreviewThumbnailWrapper>
+          <PreviewThumbnail
+            src={Product3Thumbnail}
+            active={selectedImageIndex === 3}
+            onClick={(event: MouseEvent) => setSelectedImageIndex(3)}
+          />
+        </PreviewThumbnailWrapper>
+        <PreviewThumbnailWrapper>
+          <PreviewThumbnail
+            src={Product4Thumbnail}
+            active={selectedImageIndex === 4}
+            onClick={(event: MouseEvent) => setSelectedImageIndex(4)}
+          />
+        </PreviewThumbnailWrapper>
+        <PreviewModal
+          showPreviewModal={showPreviewModal}
+          setShowPreviewModal={setShowPreviewModal}
         />
-        <PreviewThumbnail
-          src={Product2Thumbnail}
-          active={selectedImageIndex === 2}
-          onClick={(event: MouseEvent) => setSelectedImageIndex(2)}
-        />
-        <PreviewThumbnail
-          src={Product3Thumbnail}
-          active={selectedImageIndex === 3}
-          onClick={(event: MouseEvent) => setSelectedImageIndex(3)}
-        />
-        <PreviewThumbnail
-          src={Product4Thumbnail}
-          active={selectedImageIndex === 4}
-          onClick={(event: MouseEvent) => setSelectedImageIndex(4)}
-        />
-      </PreviewThumbnailContainer>
+      </PreviewThumbnailsContainer>
     </PreviewContainer>
   );
 };

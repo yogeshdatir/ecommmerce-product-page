@@ -14,23 +14,33 @@ export const PreviewImage = styled.img`
   border-radius: 15px;
 `;
 
-export const PreviewThumbnailContainer = styled.div`
+export const PreviewThumbnailsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  box-sizing: border-box;
+  user-select: none;
 `;
 
 interface IPreviewThumbnail {
   active: boolean;
 }
 
+export const PreviewThumbnailWrapper = styled.div`
+  width: 88px;
+  height: 88px;
+  background: #fff;
+  border-radius: 10px;
+`;
+
 export const PreviewThumbnail = styled.img<IPreviewThumbnail>`
-  width: 20%;
+  width: 88px;
+  height: 88px;
   border-radius: 10px;
   cursor: pointer;
   opacity: ${({ active }: IPreviewThumbnail) => (active ? 0.5 : 1)};
-  border: ${({ active }: IPreviewThumbnail) =>
-    active ? "2px solid #FF7E1B" : "2px solid #fff"};
+  outline: ${({ active }: IPreviewThumbnail) =>
+    active ? "2px solid #FF7E1B" : "2px solid transparent"};
 
   :hover {
     opacity: ${({ active }: IPreviewThumbnail) => (active ? 0.5 : 0.7)};
