@@ -66,7 +66,7 @@ const Preview = (props: Props) => {
               );
           }}
         >
-          <PreviousIcon id="previousIcon" />
+          <PreviousIcon />
         </PreviousIconContainer>
         <MobilePreviewImage
           src={previewSwitcher(selectedImageIndex)}
@@ -81,7 +81,7 @@ const Preview = (props: Props) => {
               );
           }}
         >
-          <NextIcon id="previousIcon" />
+          <NextIcon />
         </NextIconContainer>
       </MobilePreviewImageWrapper>
       <PreviewThumbnailsContainer
@@ -91,6 +91,7 @@ const Preview = (props: Props) => {
       >
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
+            alt="Preview thumbnail"
             src={Product1Thumbnail}
             active={selectedImageIndex === 1}
             onClick={() => setSelectedImageIndex(1)}
@@ -98,6 +99,7 @@ const Preview = (props: Props) => {
         </PreviewThumbnailWrapper>
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
+            alt="Preview thumbnail"
             src={Product2Thumbnail}
             active={selectedImageIndex === 2}
             onClick={() => setSelectedImageIndex(2)}
@@ -105,6 +107,7 @@ const Preview = (props: Props) => {
         </PreviewThumbnailWrapper>
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
+            alt="Preview thumbnail"
             src={Product3Thumbnail}
             active={selectedImageIndex === 3}
             onClick={() => setSelectedImageIndex(3)}
@@ -112,6 +115,7 @@ const Preview = (props: Props) => {
         </PreviewThumbnailWrapper>
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
+            alt="Preview thumbnail"
             src={Product4Thumbnail}
             active={selectedImageIndex === 4}
             onClick={() => setSelectedImageIndex(4)}

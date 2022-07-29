@@ -29,7 +29,7 @@ export const DrawerModalContainer = styled.div`
 `;
 
 export const DrawerNav = styled.nav`
-  display: flex;
+  display: ${({ show }: IDrawerModalOverlayProps) => (show ? "flex" : "none")};
   flex-direction: column;
   padding-top: 3.5rem;
   gap: 1.25rem;
