@@ -6,7 +6,7 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 1023px) {
     display: none;
   }
 `;

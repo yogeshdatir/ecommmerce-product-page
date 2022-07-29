@@ -7,12 +7,20 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
 
+  @media screen and (max-width: 1109px) {
+    padding: 0 1.5rem;
+  }
+
   #menuIcon {
     padding-top: 4px;
     padding-right: 1rem;
     width: 1rem;
     height: 1rem;
     cursor: pointer;
+
+    @media screen and (min-width: 1023px) {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 720px) {

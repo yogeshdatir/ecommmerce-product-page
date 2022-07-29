@@ -94,7 +94,7 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
             <NextIcon id="previousIcon" />
           </NextIconContainer>
         </PreviewImageWrapper>
-        <PreviewThumbnailsContainer style={{ padding: "40px" }}>
+        <PreviewThumbnailsContainer style={{ padding: "5%" }}>
           <PreviewThumbnailWrapper>
             <PreviewThumbnail
               src={Product1Thumbnail}

@@ -16,7 +16,7 @@ export const ProductContainer = styled.div`
 
 export const ProductInfoContainer = styled.div`
   padding-left: 5rem;
-  max-width: 53%;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

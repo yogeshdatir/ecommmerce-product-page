@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const PreviewContainer = styled.div`
-  width: 40%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +46,9 @@ export const PreviewThumbnailsContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   user-select: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1rem;
 
   @media screen and (max-width: 720px) {
     display: none;

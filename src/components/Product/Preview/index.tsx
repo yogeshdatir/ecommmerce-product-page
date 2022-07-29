@@ -84,7 +84,11 @@ const Preview = (props: Props) => {
           <NextIcon id="previousIcon" />
         </NextIconContainer>
       </MobilePreviewImageWrapper>
-      <PreviewThumbnailsContainer>
+      <PreviewThumbnailsContainer
+        style={{
+          padding: "0.5rem 0.25rem",
+        }}
+      >
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
             src={Product1Thumbnail}
