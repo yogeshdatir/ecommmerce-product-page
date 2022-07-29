@@ -1,4 +1,4 @@
-import React, { MouseEvent, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import {
   NextIconContainer,

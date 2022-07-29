@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from "react";
+import React, { useState } from "react";
 import {
   ProductBrandName,
   ProductName,
@@ -80,7 +80,7 @@ const Details = (props: Props) => {
           </CounterButton>
           <span>{itemCount}</span>
           <CounterButton
-            onClick={(event: MouseEvent) => {
+            onClick={() => {
               setItemCount((prevItemCount: number) => prevItemCount + 1);
             }}
           >
