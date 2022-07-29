@@ -41,6 +41,7 @@ export const Avatar = styled.img`
   border-radius: 50%;
   border: 2px solid transparent;
   cursor: pointer;
+  user-select: none;
 
   :hover {
     border: 2px solid #ff7e1b;

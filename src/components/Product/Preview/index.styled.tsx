@@ -16,6 +16,7 @@ export const PreviewImage = styled.img`
   width: 100%;
   height: 75%;
   border-radius: 15px;
+  user-select: none;
 
   @media screen and (max-width: 719px) {
     display: none;
