@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 export const PopupContainer = styled.div`
   padding: 1.5rem;
   position: absolute;
+  display: flex;
+  flex-direction: column;
 
   top: 210%;
   background: #ffffff;
@@ -12,6 +14,13 @@ export const PopupContainer = styled.div`
   transform: translate(-88%, 0);
   box-sizing: border-box;
   width: 22.5rem;
+  min-height: 16rem;
+
+  @media screen and (max-width: 719px) {
+    transform: translate(-80.25%, 0);
+    z-index: 1;
+    top: 280%;
+  }
 
   h1 {
     font-weight: 700;
@@ -20,6 +29,7 @@ export const PopupContainer = styled.div`
 
     color: #1d2026;
     padding-bottom: 1.5rem;
+    margin: 0;
   }
 `;
 
@@ -35,9 +45,10 @@ export const CartContent = styled.div`
 `;
 
 export const EmptyState = styled.div`
-  height: 12.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1;
   font-weight: 700;
   font-size: 16px;
   line-height: 26px;

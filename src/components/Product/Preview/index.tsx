@@ -1,5 +1,7 @@
 import React, { useState, MouseEvent } from "react";
 import {
+  MobilePreviewImage,
+  MobilePreviewImageWrapper,
   PreviewContainer,
   PreviewImage,
   PreviewThumbnail,
@@ -14,7 +16,13 @@ import Product3Preview from "../../../assets/images/image-product-3.jpg";
 import Product3Thumbnail from "../../../assets/images/image-product-3-thumbnail.jpg";
 import Product4Preview from "../../../assets/images/image-product-4.jpg";
 import Product4Thumbnail from "../../../assets/images/image-product-4-thumbnail.jpg";
+import { ReactComponent as PreviousIcon } from "../../../assets/images/icon-previous.svg";
+import { ReactComponent as NextIcon } from "../../../assets/images/icon-next.svg";
 import PreviewModal from "../PreviewModal";
+import {
+  NextIconContainer,
+  PreviousIconContainer,
+} from "../PreviewModal/PreviewModal.styled";
 
 type Props = {};
 
@@ -44,37 +52,65 @@ const Preview = (props: Props) => {
         src={previewSwitcher(selectedImageIndex)}
         alt="Product1 Preview"
         style={{ cursor: "pointer" }}
-        onClick={(event: MouseEvent) => {
+        onClick={() => {
           setShowPreviewModal(true);
         }}
       />
+      <MobilePreviewImageWrapper>
+        <PreviousIconContainer
+          style={{ transform: "translate(1rem, -50%)" }}
+          onClick={() => {
+            selectedImageIndex > 1 &&
+              setSelectedImageIndex(
+                (prevSelectedImageIndex: number) => prevSelectedImageIndex - 1
+              );
+          }}
+        >
+          <PreviousIcon id="previousIcon" />
+        </PreviousIconContainer>
+        <MobilePreviewImage
+          src={previewSwitcher(selectedImageIndex)}
+          alt="Product1 Preview"
+        />
+        <NextIconContainer
+          style={{ transform: "translate(-1rem, -50%)" }}
+          onClick={() => {
+            selectedImageIndex < 4 &&
+              setSelectedImageIndex(
+                (prevSelectedImageIndex: number) => prevSelectedImageIndex + 1
+              );
+          }}
+        >
+          <NextIcon id="previousIcon" />
+        </NextIconContainer>
+      </MobilePreviewImageWrapper>
       <PreviewThumbnailsContainer>
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
             src={Product1Thumbnail}
             active={selectedImageIndex === 1}
-            onClick={(event: MouseEvent) => setSelectedImageIndex(1)}
+            onClick={() => setSelectedImageIndex(1)}
           />
         </PreviewThumbnailWrapper>
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
             src={Product2Thumbnail}
             active={selectedImageIndex === 2}
-            onClick={(event: MouseEvent) => setSelectedImageIndex(2)}
+            onClick={() => setSelectedImageIndex(2)}
           />
         </PreviewThumbnailWrapper>
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
             src={Product3Thumbnail}
             active={selectedImageIndex === 3}
-            onClick={(event: MouseEvent) => setSelectedImageIndex(3)}
+            onClick={() => setSelectedImageIndex(3)}
           />
         </PreviewThumbnailWrapper>
         <PreviewThumbnailWrapper>
           <PreviewThumbnail
             src={Product4Thumbnail}
             active={selectedImageIndex === 4}
-            onClick={(event: MouseEvent) => setSelectedImageIndex(4)}
+            onClick={() => setSelectedImageIndex(4)}
           />
         </PreviewThumbnailWrapper>
         <PreviewModal

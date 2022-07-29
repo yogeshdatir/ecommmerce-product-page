@@ -9,6 +9,10 @@ export const CartContainer = styled.div`
     margin: 0 2rem;
     cursor: pointer;
 
+    @media screen and (max-width: 720px) {
+      margin: 0 1rem;
+    }
+
     :hover {
       path {
         fill: #000;

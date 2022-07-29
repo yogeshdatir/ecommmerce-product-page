@@ -6,12 +6,38 @@ export const PreviewContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 719px) {
+    width: 100%;
+  }
 `;
 
 export const PreviewImage = styled.img`
   width: 100%;
   height: 75%;
   border-radius: 15px;
+
+  @media screen and (max-width: 719px) {
+    display: none;
+  }
+`;
+
+export const MobilePreviewImageWrapper = styled.div`
+  width: 100%;
+  position: relative;
+
+  @media screen and (min-width: 720px) {
+    display: none;
+  }
+`;
+
+export const MobilePreviewImage = styled.img`
+  width: 100%;
+  height: 33.33%;
+
+  @media screen and (min-width: 720px) {
+    display: none;
+  }
 `;
 
 export const PreviewThumbnailsContainer = styled.div`
@@ -20,6 +46,10 @@ export const PreviewThumbnailsContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   user-select: none;
+
+  @media screen and (max-width: 720px) {
+    display: none;
+  }
 `;
 
 interface IPreviewThumbnail {

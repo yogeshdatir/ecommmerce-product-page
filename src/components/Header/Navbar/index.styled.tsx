@@ -5,6 +5,10 @@ export const Nav = styled.nav`
   height: 100%;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 720px) {
+    display: none;
+  }
 `;
 
 export const NavItem = styled.div`

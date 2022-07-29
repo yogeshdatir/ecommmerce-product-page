@@ -10,6 +10,7 @@ import {
   Counter,
   AddToCartButton,
   CounterButton,
+  ProductPriceWrapper,
 } from "./Details.styled";
 import { ReactComponent as CartIcon } from "../../../assets/images/icon-cart.svg";
 import { ReactComponent as MinusIcon } from "../../../assets/images/icon-minus.svg";
@@ -60,11 +61,13 @@ const Details = (props: Props) => {
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
       </ProductDescription>
-      <ProductPrice>
-        $125.00
-        <span>50%</span>
-      </ProductPrice>
-      <ProductMRP>$250.00</ProductMRP>
+      <ProductPriceWrapper>
+        <ProductPrice>
+          $125.00
+          <span>50%</span>
+        </ProductPrice>
+        <ProductMRP>$250.00</ProductMRP>
+      </ProductPriceWrapper>
       <ActionContainer>
         <Counter>
           <CounterButton

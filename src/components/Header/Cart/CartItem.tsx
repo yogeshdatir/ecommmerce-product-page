@@ -33,6 +33,7 @@ const CartItem = ({ productInCart, deleteFromCart }: IProps) => {
             <ProductNumbers>
               {product.price} x {productInCart.count}
               <span>
+                $
                 {(+product.price.substring(1) * productInCart.count).toFixed(2)}
               </span>
             </ProductNumbers>

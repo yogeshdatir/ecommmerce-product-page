@@ -67,13 +67,13 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
       <PreviewModalContainer>
         <CloseIcon
           id="closeIcon"
-          onClick={(event: MouseEvent) => {
+          onClick={() => {
             setShowPreviewModal(false);
           }}
         />
         <PreviewImageWrapper>
           <PreviousIconContainer
-            onClick={(event) => {
+            onClick={() => {
               selectedImageIndex > 1 &&
                 setSelectedImageIndex(
                   (prevSelectedImageIndex: number) => prevSelectedImageIndex - 1
@@ -84,7 +84,7 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
           </PreviousIconContainer>
           <PreviewImage src={previewSwitcher(selectedImageIndex)} />
           <NextIconContainer
-            onClick={(event) => {
+            onClick={() => {
               selectedImageIndex < 4 &&
                 setSelectedImageIndex(
                   (prevSelectedImageIndex: number) => prevSelectedImageIndex + 1
@@ -100,14 +100,14 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
               src={Product1Thumbnail}
               alt="Product 1 thumbnail"
               active={selectedImageIndex === 1}
-              onClick={(event: MouseEvent) => setSelectedImageIndex(1)}
+              onClick={() => setSelectedImageIndex(1)}
             />
           </PreviewThumbnailWrapper>
           <PreviewThumbnailWrapper>
             <PreviewThumbnail
               src={Product2Thumbnail}
               active={selectedImageIndex === 2}
-              onClick={(event: MouseEvent) => setSelectedImageIndex(2)}
+              onClick={() => setSelectedImageIndex(2)}
               alt="Product 2 thumbnail"
             />
           </PreviewThumbnailWrapper>
@@ -115,7 +115,7 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
             <PreviewThumbnail
               src={Product3Thumbnail}
               active={selectedImageIndex === 3}
-              onClick={(event: MouseEvent) => setSelectedImageIndex(3)}
+              onClick={() => setSelectedImageIndex(3)}
               alt="Product 3 thumbnail"
             />
           </PreviewThumbnailWrapper>
@@ -124,7 +124,7 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
             <PreviewThumbnail
               src={Product4Thumbnail}
               active={selectedImageIndex === 4}
-              onClick={(event: MouseEvent) => setSelectedImageIndex(4)}
+              onClick={() => setSelectedImageIndex(4)}
               alt="Product 4 thumbnail"
             />
           </PreviewThumbnailWrapper>

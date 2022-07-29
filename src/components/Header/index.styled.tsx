@@ -6,6 +6,19 @@ export const HeaderContainer = styled.header`
 
   display: flex;
   align-items: center;
+
+  #menuIcon {
+    padding-top: 4px;
+    padding-right: 1rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 720px) {
+    height: auto;
+    padding: 1.5rem;
+  }
 `;
 
 export const UserDataContainer = styled.div`
@@ -23,5 +36,10 @@ export const Avatar = styled.img`
 
   :hover {
     border: 2px solid #ff7e1b;
+  }
+
+  @media screen and (max-width: 720px) {
+    height: 24px;
+    width: 24px;
   }
 `;

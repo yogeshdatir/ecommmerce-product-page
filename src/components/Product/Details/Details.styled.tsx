@@ -19,6 +19,11 @@ export const ProductName = styled.h1`
   /* or 109% */
 
   color: #1d2026;
+
+  @media screen and (max-width: 719px) {
+    font-size: 28px;
+    line-height: 32px;
+  }
 `;
 
 export const ProductDescription = styled.p`
@@ -30,13 +35,22 @@ export const ProductDescription = styled.p`
   color: #69707d;
 `;
 
+export const ProductPriceWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+
+  @media screen and (max-width: 719px) {
+    flex-direction: row;
+  }
+`;
+
 export const ProductPrice = styled.p`
   font-weight: 700;
   font-size: 28px;
   line-height: 35px;
 
   color: #1d2026;
-  padding-top: 1.5rem;
 
   span {
     font-weight: 700;
@@ -61,21 +75,37 @@ export const ProductMRP = styled.p`
   text-decoration-line: line-through;
 
   color: #b6bcc8;
+
+  @media screen and (max-width: 719px) {
+    margin-left: auto;
+  }
 `;
 
 export const ActionContainer = styled.div`
   padding-top: 2rem;
   display: flex;
+
+  @media screen and (max-width: 719px) {
+    flex-direction: column;
+  }
 `;
 
 export const Counter = styled.div`
   background: #f6f8fd;
   width: 10rem;
+  height: 3.5rem;
   border-radius: 10px;
   margin-right: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 719px) {
+    width: 100%;
+    padding: 0 0.5rem;
+    margin-bottom: 1rem;
+  }
 
   span {
     font-weight: 700;
@@ -116,6 +146,7 @@ export const AddToCartButton = styled.button`
 
   color: #ffffff;
   padding: 18px 4.75rem;
+  height: 3.5rem;
   cursor: pointer;
 
   display: flex;
