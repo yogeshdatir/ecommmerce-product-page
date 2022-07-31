@@ -82,7 +82,12 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
           >
             <PreviousIcon id="previousIcon" />
           </PreviousIconContainer>
-          <PreviewImage src={previewSwitcher(selectedImageIndex)} />
+          <PreviewImage
+            src={previewSwitcher(selectedImageIndex)}
+            style={{
+              height: "100%",
+            }}
+          />
           <NextIconContainer
             onClick={() => {
               selectedImageIndex < 4 &&
@@ -120,6 +125,22 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
             />
           </PreviewThumbnailWrapper>
 
+          <PreviewThumbnailWrapper>
+            <PreviewThumbnail
+              src={Product4Thumbnail}
+              active={selectedImageIndex === 4}
+              onClick={() => setSelectedImageIndex(4)}
+              alt="Product 4 thumbnail"
+            />
+          </PreviewThumbnailWrapper>
+          <PreviewThumbnailWrapper>
+            <PreviewThumbnail
+              src={Product4Thumbnail}
+              active={selectedImageIndex === 4}
+              onClick={() => setSelectedImageIndex(4)}
+              alt="Product 4 thumbnail"
+            />
+          </PreviewThumbnailWrapper>
           <PreviewThumbnailWrapper>
             <PreviewThumbnail
               src={Product4Thumbnail}

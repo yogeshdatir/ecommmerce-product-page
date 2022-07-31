@@ -7,18 +7,22 @@ export const PreviewModalOverlay = styled.div`
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const PreviewModalContainer = styled.div`
-  position: fixed;
-  top: 50%;
+  /* position: fixed; */
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-height: 95vh;
 
   #closeIcon {
     margin-left: auto;
@@ -40,6 +44,7 @@ export const PreviewModalContainer = styled.div`
 export const PreviewImageWrapper = styled.div`
   position: relative;
   user-select: none;
+  height: 60vh;
 `;
 
 const IconContainer = styled.div`
