@@ -80,13 +80,14 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
                 );
             }}
           >
-            <PreviousIcon id="previousIcon" />
+            <PreviousIcon />
           </PreviousIconContainer>
           <PreviewImage
             src={previewSwitcher(selectedImageIndex)}
             style={{
               height: "100%",
             }}
+            alt="preview image"
           />
           <NextIconContainer
             onClick={() => {
@@ -96,7 +97,7 @@ const PreviewModal = ({ showPreviewModal, setShowPreviewModal }: IProps) => {
                 );
             }}
           >
-            <NextIcon id="previousIcon" />
+            <NextIcon />
           </NextIconContainer>
         </PreviewImageWrapper>
         <PreviewThumbnailsContainer style={{ padding: "5%" }}>

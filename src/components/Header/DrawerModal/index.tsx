@@ -51,7 +51,7 @@ const DrawerModal = ({ showDrawerModal, setShowDrawerModal }: IProps) => {
           style={{ cursor: "pointer" }}
           onClick={() => setShowDrawerModal(false)}
         />
-        <DrawerNav>
+        <DrawerNav show={showDrawerModal}>
           <DrawerNavItem>Collections</DrawerNavItem>
           <DrawerNavItem>Men</DrawerNavItem>
           <DrawerNavItem>Women</DrawerNavItem>

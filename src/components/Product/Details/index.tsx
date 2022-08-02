@@ -71,6 +71,7 @@ const Details = (props: Props) => {
       <ActionContainer>
         <Counter>
           <CounterButton
+            aria-label="reduce number of items by 1"
             onClick={() => {
               itemCount > 1 &&
                 setItemCount((prevItemCount: number) => prevItemCount - 1);
@@ -80,6 +81,7 @@ const Details = (props: Props) => {
           </CounterButton>
           <span>{itemCount}</span>
           <CounterButton
+            aria-label="increase number of items by 1"
             onClick={() => {
               setItemCount((prevItemCount: number) => prevItemCount + 1);
             }}
